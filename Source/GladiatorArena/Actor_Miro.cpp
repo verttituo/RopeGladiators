@@ -34,6 +34,6 @@ void AActor_Miro::Tick(float DeltaTime)
 void AActor_Miro::set_miro(int value)
 {
 	
-	UE_LOG(LogTemp, Warning, TEXT("Calling from Blueprint value is: %s") *value)
+	//UE_LOG(LogTemp, Warning, TEXT("Calling from Blueprint value is: %s") *value)
 }
 
