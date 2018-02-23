@@ -2,6 +2,7 @@
 
 #include "Actor_Miro.h"
 #include "GameFramework/PlayerController.h"
+#include "Runtime/Core/Public/Math/Vector.h"
 
 
 
@@ -18,7 +19,6 @@ void AActor_Miro::BeginPlay()
 {
 	Super::BeginPlay();
 
-
 }
 
 // Called every frame
@@ -31,9 +31,16 @@ void AActor_Miro::Tick(float DeltaTime)
 
 }
 
-void AActor_Miro::set_miro(int value)
+void AActor_Miro::set_miro(int32 value)
 {
-	
-	//UE_LOG(LogTemp, Warning, TEXT("Calling from Blueprint value is: %s") *value)
+
+	FString val = FString::FromInt(value);
+	UE_LOG(LogTemp, Warning, TEXT("Calling from Blueprint value is: %s"), *val )
+}
+
+void AActor_Miro::false_miro()
+{
+
+	UE_LOG(LogTemp, Warning, TEXT("Infinite loop"))
 }
 

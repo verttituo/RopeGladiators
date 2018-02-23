@@ -27,6 +27,9 @@ public:
 		void add_miro();
 
 	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
-		void set_miro(int value);
+		void set_miro(int32 value);
+
+	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
+		void false_miro();
 	
 };
