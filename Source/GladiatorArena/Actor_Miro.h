@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "blueprintimplementableActor.generated.h"
+#include "Actor_Miro.generated.h"
 
 UCLASS()
-class GLADIATORARENA_API AblueprintimplementableActor : public AActor
+class GLADIATORARENA_API AActor_Miro : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AblueprintimplementableActor();
+	AActor_Miro();
 
 protected:
 	// Called when the game starts or when spawned
@@ -23,7 +23,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Implemented")
-		void CPP_FUNCTION();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Implemented Miro")
+		void add_miro();
+
+	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
+		void set_miro(int value);
 	
 };
