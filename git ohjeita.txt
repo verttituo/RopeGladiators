@@ -1,0 +1,5 @@
+-git status
+-git add .
+-git commit -m "viesti"
+-git pull --rebase
+-git push

@@ -1,0 +1,10 @@
+-timer
+-round amount comes from user
+-more traps each round
+-floor dropping
+-hazard
+-simple menu for looping
+-basic loop start->play->die->again
+-points
+-GIT??
+-gamemanager whit states for looping
