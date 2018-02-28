@@ -44,3 +44,13 @@ void AActor_Miro::false_miro()
 	UE_LOG(LogTemp, Warning, TEXT("Infinite loop"))
 }
 
+int32 AActor_Miro::get_miro(int32 p1, int32 p2)
+{
+	int32 p1_points = 31;
+	int32 p2_points = 32;
+
+	UE_LOG(LogTemp, Warning, TEXT("Getting value"))
+
+	return p1_points, p2_points;
+}
+

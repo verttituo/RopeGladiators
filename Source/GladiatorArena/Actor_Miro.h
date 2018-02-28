@@ -31,5 +31,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
 		void false_miro();
+
+	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
+		int32 get_miro(int32 p1, int32 p2);
 	
 };
