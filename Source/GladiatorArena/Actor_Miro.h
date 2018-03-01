@@ -33,15 +33,22 @@ public:
 		void false_miro();
 
 	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
-		void get_miro(int32& p1_point, int32& p2_point, int32& rounds, FString& roundsLeft);
+		void get_miro(int32& p1_point, int32& p2_point, int32& rounds, FString& roundsLeft, int32& currentRound);
+
+	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
+		void AddToCurrentRoundAmount();
 	
 
 private:
 
-	int32 roundAmount = 15;
 	FString roundsLeftString = "";
+
+	int32 currentRoundAmount = 0;
+	int32 totalRoundAmount = 15;
 	int32 p1_points = 31;
 	int32 p2_points = 32;
+
+
 
 
 };
