@@ -1,5 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+
+
+
 #include "Actor_Miro.h"
 #include "GameFramework/PlayerController.h"
 #include "Runtime/Core/Public/Math/Vector.h"
@@ -33,7 +36,10 @@ void AActor_Miro::Tick(float DeltaTime)
 
 void AActor_Miro::set_miro(int32 value)
 {
+	roundAmount = value;
 
+
+	//for testing
 	FString val = FString::FromInt(value);
 	UE_LOG(LogTemp, Warning, TEXT("Calling from Blueprint value is: %s"), *val )
 }
@@ -44,13 +50,14 @@ void AActor_Miro::false_miro()
 	UE_LOG(LogTemp, Warning, TEXT("Infinite loop"))
 }
 
-int32 AActor_Miro::get_miro(int32 p1, int32 p2)
+//with int32& p1 Blueprint treats value as "out", this way we can create "multiple" returns to show in blueprint
+//forums.unrealengine.com/development-discussion/c-gameplay-programming/24776-how-to-define-a-function-with-multiple-return-values-as-blueprint-in-c
+void AActor_Miro::get_miro(int32 &p1, int32 &p2, int32& rounds)
 {
-	int32 p1_points = 31;
-	int32 p2_points = 32;
+	p1 = 32;
+	p2 = 55;
+	rounds = roundAmount;
 
-	UE_LOG(LogTemp, Warning, TEXT("Getting value"))
-
-	return p1_points, p2_points;
+	//return;
 }
 
