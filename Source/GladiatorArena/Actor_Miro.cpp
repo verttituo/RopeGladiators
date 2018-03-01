@@ -52,7 +52,7 @@ void AActor_Miro::false_miro()
 
 //with int32& p1 Blueprint treats value as "out", this way we can create "multiple" returns to show in blueprint
 //forums.unrealengine.com/development-discussion/c-gameplay-programming/24776-how-to-define-a-function-with-multiple-return-values-as-blueprint-in-c
-void AActor_Miro::get_miro(int32 &p1, int32 &p2, int32& rounds)
+void AActor_Miro::get_miro(int32& p1, int32& p2, int32& rounds)
 {
 	p1 = 32;
 	p2 = 55;
