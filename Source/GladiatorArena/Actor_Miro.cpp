@@ -55,12 +55,13 @@ void AActor_Miro::false_miro()
 //forums.unrealengine.com/development-discussion/c-gameplay-programming/24776-how-to-define-a-function-with-multiple-return-values-as-blueprint-in-c
 void AActor_Miro::get_miro(int32& p1, int32& p2, int32& rounds, FString& roundsLeft, int32& currentRound)
 {
+	//TODO name all variables and functions with better names
 	p1 = 32;
 	p2 = 55;
 	rounds = totalRoundAmount;
 	currentRound = currentRoundAmount;
 
-	//TODO add current round
+	
 	roundsLeft = FString::FromInt(currentRoundAmount) + "/" + FString::FromInt(totalRoundAmount);
 
 
@@ -72,6 +73,13 @@ void AActor_Miro::get_miro(int32& p1, int32& p2, int32& rounds, FString& roundsL
 void AActor_Miro::AddToCurrentRoundAmount()
 {
 	currentRoundAmount++;
+	return;
+}
+
+void AActor_Miro::ResetVariables()
+{
+	currentRoundAmount = 0;
+
 
 }
 

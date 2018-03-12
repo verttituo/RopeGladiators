@@ -38,6 +38,8 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
 		void AddToCurrentRoundAmount();
 	
+	UFUNCTION(BlueprintCallable, Category = "Implemented Miro")
+		void ResetVariables();
 
 private:
 
