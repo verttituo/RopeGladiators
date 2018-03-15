@@ -45,7 +45,7 @@
 *.VC.opendb
 
 # Precompiled Assets
-
+Saved/autoscreenshot.png
 SourceArt/**/*.tga
 
 # Binary Files
