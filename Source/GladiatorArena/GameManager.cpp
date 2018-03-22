@@ -23,16 +23,6 @@ void AGameManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-
-	if (hidden)
-	{
-		//actor->Destroy();
-		actor->SetActorHiddenInGame(true);
-		actor->SetActorEnableCollision(false);
-		
-		//actor->SetActorTickEnabled(false);
-	}
-
 }
 
 //player sets round amount, called from BP
@@ -65,7 +55,4 @@ void AGameManager::ResetCodeVariables()
 {
 	currentRoundPlaying = 0;
 }
-
-
-
 

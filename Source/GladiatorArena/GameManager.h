@@ -37,11 +37,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "GameManager")
 		void ResetCodeVariables();
-	
-	UPROPERTY(EditAnywhere)
-		bool hidden;
-	UPROPERTY(EditAnywhere)
-		AActor* actor;
+
 
 private:
 
@@ -50,8 +46,6 @@ private:
 
 	int32 p1_points = 31;
 	int32 p2_points = 32;
-
-	
 
 	
 };
