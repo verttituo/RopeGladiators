@@ -23,6 +23,13 @@ void AActor_Miro::BeginPlay()
 {
 	Super::BeginPlay();
 
+
+	IntArray.Add(5);
+	if (IntArray[0]==5)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("number in array is: 5") )
+	}
+	
 }
 
 // Called every frame

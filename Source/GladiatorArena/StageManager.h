@@ -62,5 +62,7 @@ private:
 	int randomNum;
 	int * tempNum;
 	
+	TArray<int32> trapArray;
+	
 
 };

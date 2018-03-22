@@ -18,6 +18,8 @@ void AStageManager::BeginPlay()
 	Super::BeginPlay();
 
 	setobjets();
+	
+	
 
 
 	//MyActor->Destroy();
@@ -40,42 +42,53 @@ void AStageManager::TrapSpawn()
 	//MyActor->SetActorHiddenInGame(false);	
 	//TriggersCube->SetActorHiddenInGame(false);
 	//Trigger->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-	randomNum= FMath::FRandRange(1, 5);
-	tempNum = &randomNum;
 
-
-	
-	switch (randomNum)
+	if (trapArray.Num() <= 4)
 	{
-	case 1 :
-		UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap1"));
-		
-		TrapMesh1->SetActorHiddenInGame(false);
-		TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-		break;
-	case 2:
-		UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap2"));
-		TrapMesh2->SetActorHiddenInGame(false);
-		TrapTriggerComponent2->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-		break;
-	case 3:
-		UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap3"));
-		TrapMesh3->SetActorHiddenInGame(false);
-		TrapTriggerComponent3->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-		break;
-	case 4:
-		UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap4"));
-		TrapMesh4->SetActorHiddenInGame(false);
-		TrapTriggerComponent4->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-		break;
-	default:
-		break;
+		do
+		{
+
+			UE_LOG(LogTemp, Warning, TEXT("Looping"));
+			randomNum = FMath::FRandRange(1, 5);
+		} while (trapArray.Contains(randomNum));
+
+		trapArray.Add(randomNum);
+
+
+		switch (randomNum)
+		{
+		case 1:
+			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap1"));
+
+			TrapMesh1->SetActorHiddenInGame(false);
+			TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+			break;
+		case 2:
+			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap2"));
+			TrapMesh2->SetActorHiddenInGame(false);
+			TrapTriggerComponent2->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+			break;
+		case 3:
+			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap3"));
+			TrapMesh3->SetActorHiddenInGame(false);
+			TrapTriggerComponent3->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+			break;
+		case 4:
+			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap4"));
+			TrapMesh4->SetActorHiddenInGame(false);
+			TrapTriggerComponent4->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+			break;
+		default:
+			break;
+		}
 	}
+			
 }
 
 void AStageManager::setobjets()
 {
-
+	trapArray.Add(0);
+	
 	TrapTriggerComponent1 = TrapTriggerActor1->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent2 = TrapTriggerActor2->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent3 = TrapTriggerActor3->FindComponentByClass<UPrimitiveComponent>();

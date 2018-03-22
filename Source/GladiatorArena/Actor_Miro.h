@@ -50,7 +50,7 @@ private:
 	int32 p1_points = 31;
 	int32 p2_points = 32;
 
-
+	TArray<int32> IntArray;
 
 
 };
