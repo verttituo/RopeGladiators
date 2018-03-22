@@ -15,6 +15,7 @@ public:
 	// Sets default values for this actor's properties
 	AStageManager();
 
+	/* Create Actors that will be set reference to Traps triggerActor*/
 	UPROPERTY(EditAnywhere)
 	AActor* TrapTriggerActor1;
 	UPROPERTY(EditAnywhere)
@@ -24,6 +25,8 @@ public:
 	UPROPERTY(EditAnywhere)
 	AActor* TrapTriggerActor4;
 	////////////////////////////////
+
+	/* Create components that will be set to reference TrapTriggerActors, so that we get access to triggerActors Collision*/
 	UPROPERTY(EditAnywhere)
 	UPrimitiveComponent* TrapTriggerComponent1;
 	UPROPERTY(EditAnywhere)
@@ -33,6 +36,8 @@ public:
 	UPROPERTY(EditAnywhere)
 	UPrimitiveComponent* TrapTriggerComponent4;
 	//////////////////////////
+
+	/* Create Actors that will be set to reference Traps triggerActors staticMeshActor childobject. Reason is to change its Visibility in Game*/
 	UPROPERTY(EditAnywhere)
 		AActor* TrapMesh1;
 	UPROPERTY(EditAnywhere)
@@ -52,17 +57,17 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	
+	/* Function that activates and "spawns" traps to level at random order*/
 	UFUNCTION(BlueprintCallable, Category = "StageManager")
 	void TrapSpawn();
 
+	/* Function to set TrapTriggerComponents reference traps triggerActors Collision*/
 	void setobjets();
 
 private:
-	int randomNum;
-	int * tempNum;
+	int randomNum; // Random number to decide what trap will be activated.
 	
-	TArray<int32> trapArray;
+	TArray<int32> trapArray; //Array to store activated traps
 	
 
 };

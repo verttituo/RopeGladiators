@@ -17,16 +17,7 @@ void AStageManager::BeginPlay()
 {
 	Super::BeginPlay();
 
-	setobjets();
-	
-	
-
-
-	//MyActor->Destroy();
-	//MyActor->SetActorEnableCollision(ECollisionEnabled::QueryAndPhysics);
-	//Trigger = MyActor->FindComponentByClass<UPrimitiveComponent>();
-	//Trigger->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-	//TriggersCube->SetActorHiddenInGame(true);
+	setobjets();	//Execute setobjects Function
 }
 
 
@@ -38,13 +29,10 @@ void AStageManager::Tick(float DeltaTime)
 
 void AStageManager::TrapSpawn()
 {
-	//UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap1"));
-	//MyActor->SetActorHiddenInGame(false);	
-	//TriggersCube->SetActorHiddenInGame(false);
-	//Trigger->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-
-	if (trapArray.Num() <= 4)
+	/* If trapArray is shorter or equally long as 4*/
+	if (trapArray.Num() <= 3)
 	{
+		/* Loop randomNum between 1 to 5 as long as it is not contained in trapArray*/
 		do
 		{
 
@@ -52,16 +40,16 @@ void AStageManager::TrapSpawn()
 			randomNum = FMath::FRandRange(1, 5);
 		} while (trapArray.Contains(randomNum));
 
-		trapArray.Add(randomNum);
+		trapArray.Add(randomNum); // Add value that randomNum got to trapArray
 
-
+		/* SwitchCase for activating and "spawning" traps, depending on the value that randomNum got*/
 		switch (randomNum)
 		{
 		case 1:
 			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap1"));
 
-			TrapMesh1->SetActorHiddenInGame(false);
-			TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+			TrapMesh1->SetActorHiddenInGame(false);		// Sets TrapMesh visible in game
+			TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics); //Enables collision for TrapTriggerComponent
 			break;
 		case 2:
 			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap2"));
@@ -84,10 +72,9 @@ void AStageManager::TrapSpawn()
 	}
 			
 }
-
+/* Function to set TrapTriggerComponents reference to traps triggerActors Collision*/
 void AStageManager::setobjets()
 {
-	trapArray.Add(0);
 	
 	TrapTriggerComponent1 = TrapTriggerActor1->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent2 = TrapTriggerActor2->FindComponentByClass<UPrimitiveComponent>();
