@@ -61,6 +61,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "StageManager")
 	void TrapSpawn();
 
+	UFUNCTION(BlueprintCallable, Category = "StageManager")
+	void Resetobjects();
+
 	/* Function to set TrapTriggerComponents reference traps triggerActors Collision*/
 	void setobjets();
 

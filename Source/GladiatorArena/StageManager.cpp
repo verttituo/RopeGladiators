@@ -72,6 +72,19 @@ void AStageManager::TrapSpawn()
 	}
 			
 }
+void AStageManager::Resetobjects()
+{
+	trapArray.Empty();
+	TrapMesh1->SetActorHiddenInGame(true);
+	TrapMesh2->SetActorHiddenInGame(true);
+	TrapMesh3->SetActorHiddenInGame(true);
+	TrapMesh4->SetActorHiddenInGame(true);
+	TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	TrapTriggerComponent2->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	TrapTriggerComponent3->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	TrapTriggerComponent4->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+}
 /* Function to set TrapTriggerComponents reference to traps triggerActors Collision*/
 void AStageManager::setobjets()
 {
@@ -82,3 +95,5 @@ void AStageManager::setobjets()
 	TrapTriggerComponent4 = TrapTriggerActor4->FindComponentByClass<UPrimitiveComponent>();
 
 }
+
+
