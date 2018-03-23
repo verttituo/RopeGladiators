@@ -18,6 +18,8 @@ void AStageManager::BeginPlay()
 	Super::BeginPlay();
 
 	setobjets();	//Execute setobjects Function
+
+
 }
 
 
@@ -47,7 +49,6 @@ void AStageManager::TrapSpawn()
 		{
 		case 1:
 			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap1"));
-
 			TrapMesh1->SetActorHiddenInGame(false);		// Sets TrapMesh visible in game
 			TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics); //Enables collision for TrapTriggerComponent
 			break;
@@ -72,6 +73,7 @@ void AStageManager::TrapSpawn()
 	}
 			
 }
+//Resets objects between rounds
 void AStageManager::Resetobjects()
 {
 	trapArray.Empty();
