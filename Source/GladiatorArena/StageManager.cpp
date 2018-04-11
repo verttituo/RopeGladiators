@@ -18,7 +18,7 @@ void AStageManager::BeginPlay()
 	Super::BeginPlay();
 
 	setobjets();	//Execute setobjects Function
-
+	ActivateDRay();
 
 }
 
@@ -95,7 +95,11 @@ void AStageManager::setobjets()
 	TrapTriggerComponent2 = TrapTriggerActor2->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent3 = TrapTriggerActor3->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent4 = TrapTriggerActor4->FindComponentByClass<UPrimitiveComponent>();
-
+	DRayCollision = DRayActor->FindComponentByClass<UPrimitiveComponent>();
 }
 
-
+void AStageManager::ActivateDRay()
+{
+	DRayMesh->SetActorHiddenInGame(false);
+	DRayCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+}
