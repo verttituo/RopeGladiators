@@ -48,22 +48,22 @@ void AStageManager::TrapSpawn()
 		switch (randomNum)
 		{
 		case 1:
-			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap1"));
+			UE_LOG(LogTemp, Warning, TEXT("Spawning trap1"));
 			TrapMesh1->SetActorHiddenInGame(false);		// Sets TrapMesh visible in game
 			TrapTriggerComponent1->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics); //Enables collision for TrapTriggerComponent
 			break;
 		case 2:
-			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap2"));
+			UE_LOG(LogTemp, Warning, TEXT("Spawning trap2"));
 			TrapMesh2->SetActorHiddenInGame(false);
 			TrapTriggerComponent2->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 			break;
 		case 3:
-			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap3"));
+			UE_LOG(LogTemp, Warning, TEXT("Spawning trap3"));
 			TrapMesh3->SetActorHiddenInGame(false);
 			TrapTriggerComponent3->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 			break;
 		case 4:
-			UE_LOG(LogTemp, Warning, TEXT("Spawnataan trap4"));
+			UE_LOG(LogTemp, Warning, TEXT("Spawning trap4"));
 			TrapMesh4->SetActorHiddenInGame(false);
 			TrapTriggerComponent4->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 			break;
