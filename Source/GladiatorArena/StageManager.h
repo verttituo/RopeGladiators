@@ -72,5 +72,5 @@ private:
 	
 	TArray<int32> trapArray; //Array to store activated traps
 	
-
+	
 };
