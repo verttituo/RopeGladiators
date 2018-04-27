@@ -17,9 +17,10 @@ void AStageManager::BeginPlay()
 {
 	Super::BeginPlay();
 
-	setobjets();	//Execute setobjects Function
-	ActivateDRay();
-
+	SetObjects();		//Execute setobjects Function
+	ActivateDRay();		//Used only for testing purposes
+	ActivateFlamets();	//Used only for testing purposes
+	ActivatePendulum();	//Used only for testing purposes
 }
 
 
@@ -88,18 +89,36 @@ void AStageManager::Resetobjects()
 
 }
 /* Function to set TrapTriggerComponents reference to traps triggerActors Collision*/
-void AStageManager::setobjets()
+void AStageManager::SetObjects()
 {
 	
 	TrapTriggerComponent1 = TrapTriggerActor1->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent2 = TrapTriggerActor2->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent3 = TrapTriggerActor3->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent4 = TrapTriggerActor4->FindComponentByClass<UPrimitiveComponent>();
-	DRayCollision = DRayActor->FindComponentByClass<UPrimitiveComponent>();
+
+	DRayCollider = DRayActor->FindComponentByClass<UCapsuleComponent>();
+	FlametCollider = FlametActor->FindComponentByClass<UCapsuleComponent>();
+	FlametWallCollider = FlametWallActor->FindComponentByClass<UCapsuleComponent>();
+	PendulumCollider = PendulumActor->FindComponentByClass<USphereComponent>();
 }
 
-void AStageManager::ActivateDRay()
+void AStageManager::ActivateDRay() //Used only for testing purposes
 {
-	DRayMesh->SetActorHiddenInGame(false);
-	DRayCollision->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	DRayActor->SetActorHiddenInGame(false);
+	DRayCollider->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+}
+
+void AStageManager::ActivateFlamets() //Used only for testing purposes
+{
+	FlametActor->SetActorHiddenInGame(false);
+	FlametWallActor->SetActorHiddenInGame(false);
+	FlametCollider->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	FlametWallCollider->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+}
+
+void AStageManager::ActivatePendulum() //Used only for testing purposes
+{
+	PendulumActor->SetActorHiddenInGame(false);
+	PendulumCollider->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 }

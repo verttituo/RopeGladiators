@@ -37,7 +37,7 @@ void UDeathRay::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 
 	//TODO: Make deathray change size depending on Vector(Vecotr changes actors size)
-	DRayMesh->SetActorScale3D(DRaySize);
+	//DRayMesh->SetActorScale3D(DRaySize);
 	//DRayActor->GetActorBounds(false, DRaySize, DRaySize);
 	// ...
 }

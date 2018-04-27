@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/SphereComponent.h"
 #include "StageManager.generated.h"
 
 UCLASS()
@@ -27,6 +29,13 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	AActor* DRayActor;
+	UPROPERTY(EditAnyWhere)
+	AActor* FlametActor;
+	UPROPERTY(EditAnywhere)
+	AActor* FlametWallActor;
+	UPROPERTY(EditAnywhere)
+	AActor* PendulumActor;
+
 	////////////////////////////////
 
 	/* Create components that will be set to reference TrapTriggerActors, so that we get access to triggerActors Collision*/
@@ -40,7 +49,15 @@ public:
 	UPrimitiveComponent* TrapTriggerComponent4;
 
 	UPROPERTY(EditAnywhere)
-	UPrimitiveComponent* DRayCollision;
+	UCapsuleComponent* DRayCollider;
+	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* FlametCollider;
+	UPROPERTY(EditAnywhere)
+	UCapsuleComponent* FlametWallCollider;
+	UPROPERTY(EditAnywhere)
+	USphereComponent* PendulumCollider;
+
+
 	//////////////////////////
 
 	/* Create Actors that will be set to reference Traps triggerActors staticMeshActor childobject. Reason is to change its Visibility in Game*/
@@ -53,8 +70,6 @@ public:
 	UPROPERTY(EditAnywhere)
 		AActor* TrapMesh4;
 
-	UPROPERTY(EditAnywhere)
-		AActor* DRayMesh;
 
 protected:
 	// Called when the game starts or when spawned
@@ -67,15 +82,21 @@ public:
 	/* Function that activates and "spawns" traps to level at random order*/
 	UFUNCTION(BlueprintCallable, Category = "StageManager")
 	void TrapSpawn();
-
+	 /* Function for resetting objects between rounds*/
 	UFUNCTION(BlueprintCallable, Category = "StageManager")
 	void Resetobjects();
 
-	UFUNCTION(BlueprintCallable, Category = "StageManager")
+	UFUNCTION(BlueprintCallable, Category = "StageManager") //Used only for testing purposes
 		void ActivateDRay();
 
+	UFUNCTION(BlueprintCallable, Category = "StageManager") //Used only for testing purposes
+		void ActivateFlamets();
+
+	UFUNCTION(BlueprintCallable, Category = "StageManager") //Used only for testing purposes
+		void ActivatePendulum();
+
 	/* Function to set TrapTriggerComponents reference traps triggerActors Collision*/
-	void setobjets();
+	void SetObjects();
 
 private:
 	int randomNum; // Random number to decide what trap will be activated.
