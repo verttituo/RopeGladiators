@@ -34,21 +34,17 @@ void AGameManager::SetRoundAmountToPlay(int32 roundSetToCode)
 }
 
 
-void AGameManager::GetValuesFromCodeToBP(int32 & p1_point, int32 & p2_point, int32 & p3_point, int32 & p4_point, int32 & totalRoundAmount, FString & roundAmountsToResultScreen, int32 & currentRound)
+void AGameManager::GetValuesFromCodeToBP(int32 & p1_point, int32 & p2_point, int32 & p3_point, int32 & p4_point, int32 & totalRoundAmount, int32 & currentRound)
 {
-
 	p1_point = p1_points;
 	p2_point = p2_points;
 	p3_point = p3_points;
 	p4_point = p4_points;
 	totalRoundAmount = totalRoundAmountSet;
-	currentRound = currentRound;
-
-	roundAmountsToResultScreen = FString::FromInt(currentRoundPlaying) + "/" + FString::FromInt(totalRoundAmountSet);
-
+	currentRound = currentRoundPlaying;
 }
 
-// Adds to player scores based on the played round. Called in the level BP.
+// Adds to player scores based on the played round. Called in BP.
 void AGameManager::AddToPlayerScores(TArray<int32> roundScoreArray)
 {
 	p1_points += roundScoreArray[0];
@@ -59,11 +55,15 @@ void AGameManager::AddToPlayerScores(TArray<int32> roundScoreArray)
 
 void AGameManager::AddToCurrentRoundAmount()
 {
-	currentRoundPlaying++;
+	currentRoundPlaying = currentRoundPlaying + 1;
 }
 
 void AGameManager::ResetCodeVariables()
 {
 	currentRoundPlaying = 0;
+	p1_points = 0;
+	p2_points = 0;
+	p3_points = 0;
+	p4_points = 0;
 }
 

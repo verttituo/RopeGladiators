@@ -30,7 +30,7 @@ public:
 		void SetRoundAmountToPlay(int32 roundSetToCode);
 
 	UFUNCTION(BlueprintCallable, Category = "GameManager")
-		void GetValuesFromCodeToBP(int32& p1_point, int32& p2_point, int32& p3_point, int32& p4_point, int32& totalRoundAmount, FString& roundAmountsToResultScreen, int32& currentRound);
+		void GetValuesFromCodeToBP(int32& p1_point, int32& p2_point, int32& p3_point, int32& p4_point, int32& totalRoundAmount, int32& currentRound);
 
 	UFUNCTION(BlueprintCallable, Category = "GameManager")
 		void AddToPlayerScores(TArray<int32> roundScoreArray);
@@ -46,7 +46,6 @@ private:
 
 	int32 currentRoundPlaying = 0;
 	int32 totalRoundAmountSet = 15;
-	int32 currentRound = 0;
 
 	int32 p1_points = 0;
 	int32 p2_points = 0;

@@ -17,7 +17,7 @@ public:
 	// Sets default values for this actor's properties
 	AStageManager();
 
-	/* Create Actors that will be set reference to Traps triggerActor*/
+	/* Create Actors that will be set reference to Traps triggerActor
 	UPROPERTY(EditAnywhere)
 	AActor* TrapTriggerActor1;
 	UPROPERTY(EditAnywhere)
@@ -35,10 +35,10 @@ public:
 	AActor* FlametWallActor;
 	UPROPERTY(EditAnywhere)
 	AActor* PendulumActor;
-
+	*/
 	////////////////////////////////
 
-	/* Create components that will be set to reference TrapTriggerActors, so that we get access to triggerActors Collision*/
+	/* Create components that will be set to reference TrapTriggerActors, so that we get access to triggerActors Collision
 	UPROPERTY(EditAnywhere)
 	UPrimitiveComponent* TrapTriggerComponent1;
 	UPROPERTY(EditAnywhere)
@@ -56,11 +56,11 @@ public:
 	UCapsuleComponent* FlametWallCollider;
 	UPROPERTY(EditAnywhere)
 	USphereComponent* PendulumCollider;
-
+	*/
 
 	//////////////////////////
 
-	/* Create Actors that will be set to reference Traps triggerActors staticMeshActor childobject. Reason is to change its Visibility in Game*/
+	/* Create Actors that will be set to reference Traps triggerActors staticMeshActor childobject. Reason is to change its Visibility in Game
 	UPROPERTY(EditAnywhere)
 		AActor* TrapMesh1;
 	UPROPERTY(EditAnywhere)
@@ -69,7 +69,7 @@ public:
 		AActor* TrapMesh3;
 	UPROPERTY(EditAnywhere)
 		AActor* TrapMesh4;
-
+		*/
 
 protected:
 	// Called when the game starts or when spawned
@@ -79,13 +79,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	/* Function that activates and "spawns" traps to level at random order*/
+	//Function that activates and "spawns" traps to level at random order
 	UFUNCTION(BlueprintCallable, Category = "StageManager")
 	void TrapSpawn();
-	 /* Function for resetting objects between rounds*/
+
+	//Function for resetting objects between rounds
 	UFUNCTION(BlueprintCallable, Category = "StageManager")
 	void Resetobjects();
 
+	/*
 	UFUNCTION(BlueprintCallable, Category = "StageManager") //Used only for testing purposes
 		void ActivateDRay();
 
@@ -94,14 +96,15 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "StageManager") //Used only for testing purposes
 		void ActivatePendulum();
+	*/
 
-	/* Function to set TrapTriggerComponents reference traps triggerActors Collision*/
+	//Function to set TrapTriggerComponents reference traps triggerActors Collision
 	void SetObjects();
-
-private:
-	int randomNum; // Random number to decide what trap will be activated.
 	
-	TArray<int32> trapArray; //Array to store activated traps
+private:
+	//int randomNum; // Random number to decide what trap will be activated.
+	
+	//TArray<int32> trapArray; //Array to store activated traps
 	
 	
 };

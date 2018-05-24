@@ -17,10 +17,10 @@ void AStageManager::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SetObjects();		//Execute setobjects Function
-	ActivateDRay();		//Used only for testing purposes
-	ActivateFlamets();	//Used only for testing purposes
-	ActivatePendulum();	//Used only for testing purposes
+	//SetObjects();		//Execute setobjects Function
+	//ActivateDRay();		//Used only for testing purposes
+	//ActivateFlamets();	//Used only for testing purposes
+	//ActivatePendulum();	//Used only for testing purposes
 }
 
 
@@ -32,10 +32,12 @@ void AStageManager::Tick(float DeltaTime)
 
 void AStageManager::TrapSpawn()
 {
+	
 	/* If trapArray is shorter or equally long as 4*/
+	/*
 	if (trapArray.Num() <= 3)
 	{
-		/* Loop randomNum between 1 to 5 as long as it is not contained in trapArray*/
+		// Loop randomNum between 1 to 5 as long as it is not contained in trapArray
 		do
 		{
 
@@ -45,7 +47,7 @@ void AStageManager::TrapSpawn()
 
 		trapArray.Add(randomNum); // Add value that randomNum got to trapArray
 
-		/* SwitchCase for activating and "spawning" traps, depending on the value that randomNum got*/
+		// SwitchCase for activating and "spawning" traps, depending on the value that randomNum got
 		switch (randomNum)
 		{
 		case 1:
@@ -72,11 +74,13 @@ void AStageManager::TrapSpawn()
 			break;
 		}
 	}
-			
+	*/
+	
 }
 //Resets objects between rounds
 void AStageManager::Resetobjects()
 {
+	/*
 	trapArray.Empty();
 	TrapMesh1->SetActorHiddenInGame(true);
 	TrapMesh2->SetActorHiddenInGame(true);
@@ -86,12 +90,12 @@ void AStageManager::Resetobjects()
 	TrapTriggerComponent2->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	TrapTriggerComponent3->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	TrapTriggerComponent4->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
+	*/
 }
 /* Function to set TrapTriggerComponents reference to traps triggerActors Collision*/
 void AStageManager::SetObjects()
 {
-	
+	/*
 	TrapTriggerComponent1 = TrapTriggerActor1->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent2 = TrapTriggerActor2->FindComponentByClass<UPrimitiveComponent>();
 	TrapTriggerComponent3 = TrapTriggerActor3->FindComponentByClass<UPrimitiveComponent>();
@@ -101,8 +105,10 @@ void AStageManager::SetObjects()
 	FlametCollider = FlametActor->FindComponentByClass<UCapsuleComponent>();
 	FlametWallCollider = FlametWallActor->FindComponentByClass<UCapsuleComponent>();
 	PendulumCollider = PendulumActor->FindComponentByClass<USphereComponent>();
+	*/
 }
 
+/*
 void AStageManager::ActivateDRay() //Used only for testing purposes
 {
 	DRayActor->SetActorHiddenInGame(false);
@@ -122,3 +128,4 @@ void AStageManager::ActivatePendulum() //Used only for testing purposes
 	PendulumActor->SetActorHiddenInGame(false);
 	PendulumCollider->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 }
+*/
